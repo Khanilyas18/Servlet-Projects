@@ -1,0 +1,67 @@
+package pro.com;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class Sending_response
+ */
+@WebServlet("/example")
+public class Sending_response extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String action = request.getParameter("action");
+
+		if ("output".equals(action)) {
+			// example of getOutputStream
+			ServletOutputStream out = response.getOutputStream();
+			out.println("<html><body>");
+			out.println("<h1>Hello World</h1>");
+			out.println("</body></html>");
+
+		} else if ("status".equals(action)) {
+//        example of setstatus
+			response.setStatus(HttpServletResponse.SC_OK);// 404
+			PrintWriter out = response.getWriter();
+			out.println("<html><body>");
+			out.println("<h1>SC_NOT_FOUND</h1>");
+			out.println("</body></html>");
+
+		} else if ("redirect".equals(action)) {
+			// example of sendRedirect
+			response.sendRedirect("http://example.com");
+		} else if ("cookie".equals(action)) {
+			// example of addcookie
+			Cookie cookie = new Cookie("username", "Ilyas_khan");
+			response.addCookie(cookie);
+			PrintWriter out = response.getWriter();
+			out.println("<html><body>");
+			out.println("<h1>Cookie added</h1>");
+			out.println("</body></html>");
+		} else {
+			// Default response with HTML
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.println("<html><body>");
+			out.println("<h1>Servlet Example</h1>");
+			out.println("<ul>");
+			out.println("<li><a href='?action=output'>Test getOutputStream</a><li>");
+			out.println("<li><a href='?action=status'>Test setStatus</a><li>");
+			out.println("<li><a href='?action=redirect'>Test sendRedirect</a><li>");
+			out.println("<li><a href='?action=cookie'>Test addCookie</a><li>");
+			out.println("</ul>");
+			out.println("</body></html>");
+		}
+
+	}
+
+}

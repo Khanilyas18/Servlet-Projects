@@ -1,0 +1,39 @@
+package httpseesionn.com;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Servlet implementation class Sessionexample
+ */
+@WebServlet("/Sessionexample")
+public class Sessionexample extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		// create a session or get existing one
+		HttpSession session = request.getSession();
+
+		// set a session sttibute
+		session.setAttribute("username", "Johndoe");
+
+		// Display session details
+		out.println("<h3>session example</h3>");
+		out.println("<p>session ID" + session.getId() + "</p>");
+		out.println("<p>username stored" + session.getAttribute("username") + "</p>");
+		out.println("<p>is new session" + session.isNew() + "</p>");
+
+	}
+
+}

@@ -1,0 +1,16 @@
+127.0.0.1 - - [04/Nov/2025:13:54:12 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:13:54:13 +0530] "GET /Requesst_Responsse/firsec.html HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:13:54:13 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:13:54:39 +0530] "POST /Requesst_Responsse/FisrtSerlt HTTP/1.1" 200 109
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:13:55:22 +0530] "POST /Requesst_Responsse/FisrtSerlt HTTP/1.1" 200 109
+127.0.0.1 - - [04/Nov/2025:16:10:15 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:17 +0530] "GET /Project__01/Response.html HTTP/1.1" 200 439
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:17 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:26 +0530] "GET /Project__01/example?action=output HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:35 +0530] "GET /Project__01/example?action=status HTTP/1.1" 200 58
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:41 +0530] "GET /Project__01/example?action=redirect HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:10:52 +0530] "GET /Project__01/example?action=cookie HTTP/1.1" 200 53
+127.0.0.1 - - [04/Nov/2025:16:12:07 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:12:08 +0530] "GET /Project__01/example HTTP/1.1" 200 292
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:12:12 +0530] "GET /Project__01/example?action=status HTTP/1.1" 200 60
+0:0:0:0:0:0:0:1 - - [04/Nov/2025:16:12:17 +0530] "GET /Project__01/example?action=redirect HTTP/1.1" 302 -

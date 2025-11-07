@@ -1,0 +1,38 @@
+package baut.com;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet("/FisrtSerlt")
+public class FisrtSerlt extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	// Corrected method name: doPost (capital 'P')
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		// Using parameters from HTML form
+		String name = request.getParameter("username");
+		String age = request.getParameter("age");
+
+		// Store data in request attribute
+		request.setAttribute("userAge", age);
+
+		// Store data in session
+		HttpSession session = request.getSession();
+		session.setAttribute("userName", name);
+
+		// Forward to SecondServlet
+		RequestDispatcher rd = request.getRequestDispatcher("SecondServl");
+		rd.forward(request, response);
+	}
+}

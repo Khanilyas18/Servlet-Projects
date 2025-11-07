@@ -1,0 +1,37 @@
+package cookies.com;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet("/cookies_1")
+public class Cookies_1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		// check if we should show cookies
+		if (request.getParameter("show") != null) {
+			// show cookies
+			Cookie[] cookies = request.getCookies();
+			out.println("<h2>Current Cookies:</h2>");
+			if (cookies != null) {
+				for (Cookie cookie : cookies) {
+					out.println(cookie.getName() + "" + cookie.getValue() + "<br>");
+
+			}
+		} else {
+			out.println("No cookies found");
+		}
+		out.println("<br><a href='cookies_1?show=true>Show cookies</a>");
+	}
+	}
+}

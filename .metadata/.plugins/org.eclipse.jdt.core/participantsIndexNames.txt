@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+C:\Jsp_servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1283756243.index
+\Helloworlds\src\main\java
+C:\Jsp_servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3763741866.index
+\Project_04\src\main\resources

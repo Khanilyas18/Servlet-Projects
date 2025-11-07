@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Servlet Navigation</title>
+
+<style>
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.navbar button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 6px;
+	background-color: #007BFF;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.navbar button:hover {
+	background-color: #0056b3;
+}
+</style>
+
+</head>
+
+<body>
+
+	<h1>Welcome to My Website</h1>
+
+	<div class="navbar">
+
+		<form action="pages" method="get">
+
+			<button type="submit" name="page" value="home">Home</button>
+
+		</form>
+
+		<form action="pages" method="get">
+
+			<button type="submit" name="page" value="about">About Us</button>
+
+		</form>
+
+		<form action="pages" method="get">
+
+			<button type="submit" name="page" value="contact">Contact Us</button>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body{
+	font-family: Arial,sans-serif;
+	background:#f4f4f9;
+	text-align:center;
+	padding:50px;
+}
+h1{
+	color:darkblue
+}
+button{
+	padding:10px 20px;
+	font-size: 16px;
+	background: darkblue;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: navy;
+}

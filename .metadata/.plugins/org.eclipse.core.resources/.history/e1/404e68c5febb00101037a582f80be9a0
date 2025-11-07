@@ -1,0 +1,37 @@
+package httpseesion.com;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet("/Httpsession2")
+public class Httpsession2 extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		HttpSession session = request.getSession(false);// get existing session only
+		String name = (String) session.getAttribute("user");
+		if (name != null) {
+			String username = (String) session.getAttribute("user");// get stored value
+			if (username != null) {
+				out.println("<h2>Welcome," + username + "!</h2>");
+			} else {
+				out.println("<h3>No  user data found in session,</h2>");
+			}
+		} else {
+			out.println("<h3>No active session found,please login again</h3>");
+		}
+	}
+
+}

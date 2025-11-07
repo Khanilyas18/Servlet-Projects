@@ -1,0 +1,10 @@
+package rays.com;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+
+ public  interface  abxd {
+	
+	public void add();
+ }

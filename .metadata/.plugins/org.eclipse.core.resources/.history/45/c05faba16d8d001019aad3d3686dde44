@@ -1,0 +1,152 @@
+package com.rays.TestModel;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import com.rays.bean.FacultyBean;
+import com.rays.model.FacultyModel;
+
+import util.JDBCDataSource;
+
+public class TestFacultyModel {
+	public static void main(String[] args) {
+		//Testadd();
+		//Testupdate();
+		//Testdelete();
+		//Testfindbypk();
+		Testfindbyemail();
+	}
+
+	private static void Testfindbyemail() {
+		FacultyModel model = new FacultyModel();
+
+		FacultyBean bean = model.findbyEmail("ilyas@gmail.com");
+
+		if (bean != null) {
+			System.out.print(bean.getId());
+			System.out.print("\t" + bean.getFisrtName());
+			System.out.print("\t" + bean.getLastName());
+			System.out.print("\t" + bean.getDob());
+			System.out.print("\t" + bean.getGender());
+			System.out.print("\t" + bean.getMobileNo());
+			System.out.print("\t" + bean.getEmail());
+			System.out.print("\t" + bean.getCollegeId());
+			System.out.print("\t" + bean.getCollegeName());
+			System.out.print("\t" + bean.getCourseId());
+			System.out.print("\t" + bean.getCourseName());
+			System.out.print("\t" + bean.getSubjectId());
+			System.out.print("\t" + bean.getSubjectName());
+			System.out.print("\t" + bean.getCreatedby());
+			System.out.print("\t" + bean.getModifiedBy());
+			System.out.print("\t" + bean.getCreatedDatetime());
+			System.out.println("\t" + bean.getModifiedDatetime());
+		} else {
+			System.out.println("id not found");
+
+		}
+		
+	}
+
+
+
+	private static void Testfindbypk() {
+		FacultyModel model = new FacultyModel();
+
+		FacultyBean bean = model.findByPk(5);
+
+		if (bean != null) {
+			System.out.print(bean.getId());
+			System.out.print("\t" + bean.getFisrtName());
+			System.out.print("\t" + bean.getLastName());
+			System.out.print("\t" + bean.getDob());
+			System.out.print("\t" + bean.getGender());
+			System.out.print("\t" + bean.getMobileNo());
+			System.out.print("\t" + bean.getEmail());
+			System.out.print("\t" + bean.getCollegeId());
+			System.out.print("\t" + bean.getCollegeName());
+			System.out.print("\t" + bean.getCourseId());
+			System.out.print("\t" + bean.getCourseName());
+			System.out.print("\t" + bean.getSubjectId());
+			System.out.print("\t" + bean.getSubjectName());
+			System.out.print("\t" + bean.getCreatedby());
+			System.out.print("\t" + bean.getModifiedBy());
+			System.out.print("\t" + bean.getCreatedDatetime());
+			System.out.println("\t" + bean.getModifiedDatetime());
+		} else {
+			System.out.println("id not found");
+
+		}
+		
+	}
+
+
+
+	private static void Testdelete() {
+		FacultyModel model = new FacultyModel();
+		FacultyBean bean = new FacultyBean();
+		model.delete(3);
+		
+	}
+
+
+
+	private static void Testupdate() {
+		
+		    FacultyBean bean = new FacultyBean();
+		    bean.setId(1); // must exist in DB
+		    bean.setFirstName("HASEEM");
+		    bean.setLastName("KHAN");
+		    bean.setDob(new Date());
+		    bean.setGender("MALE");
+		    bean.setMobileNo("7999394325");
+		    bean.setEmail("haseem@gmail.com");
+		    bean.setCollegeId(2);
+		    bean.setCollegeName("Ravindranath tagore college");
+		    bean.setCourseId(103);
+		    bean.setCourseName("BCA");
+		    bean.setSubjectId(203);
+		    bean.setSubjectName("JAVA BACKEND & FRONTEND");
+		    bean.setModifiedBy("admin@gmail.com");
+		    bean.setCreatedDatetime(new Timestamp(System.currentTimeMillis()));
+            bean.setModifiedDatetime(new Timestamp(System.currentTimeMillis()));
+
+		    FacultyModel model = new FacultyModel();
+		    long rows = model.update(bean);
+		    System.out.println("Rows updated = " + rows);
+		}
+
+		
+	
+
+
+
+	private static void Testadd() {
+		FacultyBean bean = new FacultyBean();
+
+		bean.setFirstName("Manali");
+		bean.setLastName("rajput");
+		bean.setDob(new Date());
+		bean.setGender("FEMALE");
+		bean.setMobileNo("7999394325");
+		bean.setEmail("sonali@gmail.com");
+		bean.setCollegeId(2);
+		bean.setCollegeName("Holkar college");
+		bean.setCourseId(103);
+		bean.setCourseName("JAVA FULL STACK");
+		bean.setSubjectId(203);
+		bean.setSubjectName("JAVA BACKEND & FRONTEND");
+		bean.setCreatedBy("admin@gmail.com");
+		bean.setModifiedBy("admin@gmail.com");
+		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
+		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
+
+		FacultyModel model = new FacultyModel();
+		model.add(bean);
+
+	}
+	
+	
+}

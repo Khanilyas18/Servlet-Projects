@@ -1,0 +1,67 @@
+package cookiyee;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+
+@WebServlet("/cookieServlet")
+public class Cookie_2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		// check if the user want to see the cookies
+		if (request.getParameter("show") != null) {
+			// Display Cookies
+			Cookie[] cookies = request.getCookies();
+			out.println("<h2>Current cookies:</h2>");
+			if (cookies != null) {
+				for (Cookie cookie : cookies) {
+					out.println(cookie.getName() + "" + cookie.getValue() + "<br>");
+
+				}
+			} else {
+				out.println("No cookies found");
+
+			}
+			out.println("<br><a href='index.html'>Back to form</a>");
+
+		} else {
+			// Display a link to show cookies
+			out.println("<h2>Welcome to the Cookie Example");
+			out.println("<a href='cookieServlet?show=true'");
+
+		}
+
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		// Get the username from the form
+		String username = request.getParameter("username");
+		
+		// Set a cookie with the username
+		Cookie userCookie = new Cookie("username",username);
+		userCookie.setMaxAge(4);//24 hours
+		response.addCookie(userCookie);
+		
+		out.println("<h2>Cookie has been set!</h2>");
+		out.println("<a href='cookieServlet?show=true'>Show Cokkies</a>");
+		out.println("<br><a href='index.html'>Back to form</a>");
+	}
+
+}

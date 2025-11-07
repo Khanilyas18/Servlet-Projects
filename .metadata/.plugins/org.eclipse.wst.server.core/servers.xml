@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v11.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v11.0 Server at localhost" name="Tomcat v11.0 Server at localhost" runtime-id="Apache Tomcat v11.0" server-type="org.eclipse.jst.server.tomcat.110" server-type-id="org.eclipse.jst.server.tomcat.110" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="16">
+    <list key="modules" value0="Project_08::org.eclipse.jst.jee.server:Project_08::jst.web::6.1" value1="Project_011::org.eclipse.jst.jee.server:Project_011::jst.web::6.1" value10="session1::org.eclipse.jst.jee.server:session1::jst.web::6.1" value2="Project0123::org.eclipse.jst.jee.server:Project0123::jst.web::6.1" value3="Project0124::org.eclipse.jst.jee.server:Project0124::jst.web::6.1" value4="Cookies::org.eclipse.jst.jee.server:Cookies::jst.web::6.1" value5="Requesst_Responsse::org.eclipse.jst.jee.server:Requesst_Responsse::jst.web::6.1" value6="Project__01::org.eclipse.jst.jee.server:Project__01::jst.web::6.1" value7="cookie_1::org.eclipse.jst.jee.server:cookie_1::jst.web::6.1" value8="cookie_2::org.eclipse.jst.jee.server:cookie_2::jst.web::6.1" value9="session::org.eclipse.jst.jee.server:session::jst.web::6.1"/>
+  </server>
+</servers>

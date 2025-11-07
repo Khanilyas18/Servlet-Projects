@@ -1,0 +1,8 @@
+package jdbcInsertDemo;
+
+public class InsertDemo {
+
+	public static void main(String[] args) {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+	}
+}
